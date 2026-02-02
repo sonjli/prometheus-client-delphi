@@ -5,7 +5,7 @@ interface
 uses
   System.Classes,
   System.SysUtils,
-  Prometheus.Samples;
+  Prometheus.Samples, System.DateUtils;
 
 type
 
@@ -189,6 +189,8 @@ begin
       end;
       AWriter.Write(' ');
       AWriter.Write(FormatNumber(LSample.Value));
+      if LSample.TimeStamp > 0 then
+        AWriter.Write(DateTimeToUnix(LSample.TimeStamp).ToString);
       AWriter.Write(#10);
     end;
 

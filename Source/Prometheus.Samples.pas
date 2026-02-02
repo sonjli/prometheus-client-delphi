@@ -37,6 +37,10 @@ type
     /// </summary>
     Value: Double;
     /// <summary>
+    ///  A backfill or historical timestamp of this sample.
+    /// </summary>
+    TimeStamp: TDateTime;
+    /// <summary>
     ///  Check if this sample is bound to label names and values.
     /// </summary>
     function HasLabels: Boolean;
